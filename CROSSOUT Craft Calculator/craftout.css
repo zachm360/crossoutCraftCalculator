@@ -1,0 +1,160 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#chordInfo img,
+#aviatorInfo img,
+#wwt1Info img,
+#littleBoyInfo img {
+    /* Add your desired styles here */
+    margin-top: 2em;
+    /* Adjust the value as needed for the desired spacing between the text and the image */
+    margin-bottom: 2em;
+
+}
+
+.recommendationText {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF6600;
+    line-height: 2;
+    /* Adjust the value as needed for the desired line spacing */
+    margin-bottom: 4px;
+    /* Adjust the value as needed for the desired spacing between lines */
+
+
+}
+
+.footerText {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF6600;
+    line-height: 2;
+    margin-bottom: 4px;
+}
+
+.workbenchText {
+    font-size: 16px;
+    padding: 6px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: #FF6600;
+}
+
+.workbenchOption {
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #FF6600;
+    background-color: #222222;
+    color: #FFFFFF;
+    margin-bottom: 4px;
+}
+
+.recommendationText2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF6600;
+    line-height: 2;
+    /* Adjust the value as needed for the desired line spacing */
+    margin-top: 4px;
+    /* Adjust the value as needed for the desired spacing between lines */
+    border-style: solid;
+    border-width: thick;
+    border-color: #df9c00;
+    background-color: #4c4b4b;
+    padding: 10px;
+
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-top: 2px;
+}
+
+
+
+h1 br {
+    display: block;
+    content: "";
+    margin-top: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF6600;
+}
+
+input[type="number"] {
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #FF6600;
+    background-color: #222222;
+    color: #FFFFFF;
+}
+
+input[type="submit"],
+.button-style {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #FF6600;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+hr {
+    height: 1px;
+    background-color: #FF6600;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#donationLink {
+    text-align: center;
+}
+
+#donationLink a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2a2a2a;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #ff7f00;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#donationLink a:hover {
+    background-color: #3c3c3c;
+}
