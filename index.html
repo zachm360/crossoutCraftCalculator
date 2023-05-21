@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crossout Craft Calculator</title>
+    <link rel="stylesheet" href="craftout.css" />
+</head>
+
+<body>
+    <h1>CRAFTOUT
+        <br>
+        CROSSOUT Crafting Calculator
+    </h1>
+    <hr />
+
+    <h2>Enter the current cost of resources below</h2>
+    <p>Be sure to enter the price per 100 of each resource. Ie. 100x batteries not 10x. </p>
+    <br />
+    <form id="resourceMarketValues">
+        <table>
+            <tr>
+                <td>
+                    <label for="scrapValue">Scrap Metal x100:</label>
+                </td>
+                <td>
+                    <input type="number" step="any" id="scrapValue" name="scrapValue" required>
+                </td>
+                <td>
+                    <label for="wireValue">Wires x100:</label>
+                </td>
+                <td>
+                    <input type="number" step="any" id="wireValue" name="wireValue" required>
+                </td>
+                <td>
+                    <label for="batteryValue">Batteries x100:</label>
+                </td>
+                <td>
+                    <input type="number" step="any" id="batteryValue" name="batteryValue" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="copperValue">Copper x100:</label>
+                </td>
+                <td>
+                    <input type="number" step="any" id="copperValue" name="copperValue" required>
+                </td>
+                <td>
+                    <label for="plasticValue">Plastic x100:</label>
+                </td>
+                <td>
+                    <input type="number" step="any" id="plasticValue" name="plasticValue" required>
+                </td>
+                <td>
+                    <label for="electronicValue">Electronics x100:</label>
+                </td>
+                <td>
+                    <input type="number" step="any" id="electronicValue" name="electronicValue" required>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <label for="uraniumValue">Uranium x100:</label>
+                </td>
+                <td>
+                    <input type="number" step="any" id="uraniumValue" name="uraniumValue" required>
+                </td>
+            </tr>
+        </table>
+        <hr />
+        <h2>Workbench Cost Analysis</h2>
+        <p>Select you're workshop discounts for Xbox Live and PS Plus Members and events! Xbox
+            live and PS Plus members should choose "Discounted Workbench". Use "Free Workbench" during special events.
+        </p><select id="workbenchOption" class="workbenchOption">
+            <option value="full">Full Price Workbench</option>
+            <option value="discounted">Discounted Workbench</option>
+            <option value="free">Free Workbench</option>
+
+        </select><br />
+        <input type="submit" value="Submit">
+    </form>
+    <hr />
+
+    <h2>Choose the Item You wish to Craft:</h2>
+    <table>
+        <tr>
+            <td><label for="factions">Faction</label></td>
+            <td><select name="factions" id="factions" class="workbenchOption">
+
+                    <option value="engineers">Engineers</option>
+                    <option value="lunatics">Lunatics</option>
+                    <option value="nomads">Nomads</option>
+                    <option value="scavengers">Scavengers</option>
+            </td>
+            </select>
+
+            <td><label for="rarity">Item Rarity</label></td>
+            <td><select name="rarity" id="rarity" class="workbenchOption">
+                    <option value="common">Common</option>
+                    <option value="rare">Rare</option>
+                    <option value="special">Special</option>
+                    <option value="epic">Epic</option>
+                    <option value="legendary">Legendary</option>
+                    <option value="relic">Relic</option>
+                </select></td>
+
+            <td><label for="type">Item Type</label></td>
+            <td><select name="type" id="type" class="workbenchOption">
+                    <option value="cabin">Cabin</option>
+                    <option value="movementParts">Movement Parts</option>
+                    <option value="weapons">Weapons</option>
+                    <option value="hardware">Hardware</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td colspan="4"><label for="item">Select the item you want to craft</label></td>
+            <td colspan="2">
+                <select name="item" id="item" class="workbenchOption">
+                    <option value="chord"> Chord</option>
+                    <option value="sprinterCabin"> Sprinter Cabin</option>
+                    <option value="huntsman"> Huntsman Cabin</option>
+                    <option value="carJack"> carJack </option>
+                    <option value="smallWheel">Small Wheel</option>
+                    <option value="smallWheelSt">Small Wheel</option>
+                    <option value="lupara">Lupara</option>
+                    <option value="radio">Radio</option>
+                    <option value="r1Breeze">R1 Breeze</option>
+                    <option value="ruby">R1 Breeze</option>
+                    <option value="avenger">Avenger</option>
+                    <option value="docker">Docker Cabin</option>
+                    <option value="mediumWheel">Medium Wheel</option>
+                    <option value="fuelBarrel">Fuel Barrel</option>
+                    <option value="aviator">Aviator</option>
+                    <option value="wwt1">WWT1 Cabin</option>
+                    <option value="littleBoy">Little Boy</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <button onclick="submitCraftingCost()" class="button-style">Calculate Cost</button>
+    <p id="chordInfo" style="display: none;">
+        <span id="chordMarketValue" class="recommendationText"></span><br />
+        <span id="chordCost" class="recommendationText"></span><br />
+        <img src="chord.jpg" alt="Display Chord Img"><br />
+        <span id="chordRecommendation" class="recommendationText2"></span>
+    </p>
+    <p id="carJackInfo" style="display: none;">
+        <span id="carJackMarketValue"></span><br />
+        <span id="carJackCost"></span><br />
+        <span id="carJackRecommendation"></span><br />
+    </p>
+    <p id="huntsmanInfo" style="display: none;">
+        <span id="huntsmanMarketValue"></span><br />
+        <span id="huntsmanCost"></span><br />
+        <span id="huntsmanRecommendation"></span><br />
+    </p>
+    <p id="sprinterCabInfo" style="display: none;">
+        <span id="sprinterCabMarketValue"></span><br />
+        <span id="sprinterCabCost"></span><br />
+        <span id="sprinterCabRecommendation"></span><br />
+    </p>
+    <p id="smallWheelInfo" style="display: none;">
+        <span id="smallWheelMarketValue"></span><br />
+        <span id="smallWheelCost"></span><br />
+        <span id="smallWheelRecommendation"></span><br />
+    </p>
+    <p id="smallWheelStInfo" style="display: none;">
+        <span id="smallWheelStMarketValue"></span><br />
+        <span id="smallWheelStCost"></span><br />
+        <span id="smallWheelStRecommendation"></span><br />
+    </p>
+    <p id="luparaInfo" style="display: none;">
+        <span id="luparaMarketValue"></span><br />
+        <span id="luparaCost"></span><br />
+        <span id="luparaRecommendation"></span><br />
+    </p>
+    <p id="radioInfo" style="display: none;">
+        <span id="radioMarketValue"></span><br />
+        <span id="radioCost"></span><br />
+        <span id="radioRecommendation"></span><br />
+    </p>
+    <p id="r1BreezeInfo" style="display: none;">
+        <span id="r1BreezeMarketValue"></span><br />
+        <span id="r1BreezeCost"></span><br />
+        <span id="r1BreezeRecommendation"></span><br />
+    </p>
+    <p id="rubyInfo" style="display: none;">
+        <span id="rubyMarketValue"></span><br />
+        <span id="rubyCost"></span><br />
+        <span id="rubyRecommendation"></span><br />
+    </p>
+    <p id="avengerInfo" style="display: none;">
+        <span id="avengerMarketValue"></span><br />
+        <span id="avengerCost"></span><br />
+        <span id="avengerRecommendation"></span><br />
+    </p>
+    <p id="dockerInfo" style="display: none;">
+        <span id="dockerMarketValue"></span><br />
+        <span id="dockerCost"></span><br />
+        <span id="dockerRecommendation"></span><br />
+    </p>
+    <p id="mediumWheelInfo" style="display: none;">
+        <span id="mediumWheelMarketValue"></span><br />
+        <span id="mediumWheelCost"></span><br />
+        <span id="mediumWheelRecommendation"></span><br />
+    </p>
+    <p id="fuelBarrelInfo" style="display: none;">
+        <span id="fuelBarrelMarketValue"></span><br />
+        <span id="fuelBarrelCost"></span><br />
+        <span id="fuelBarrelRecommendation"></span><br />
+    </p>
+    <p id="aviatorInfo" style="display: none;">
+        <span id="aviatorMarketValue" class="recommendationText"></span><br />
+        <span id="aviatorCost" class="recommendationText"></span><br />
+        <img src="aviator.jpg" alt="Display Aviator Img"><br />
+        <span id="aviatorRecommendation" class="recommendationText2"></span>
+    </p>
+    <p id="wwt1Info" style="display: none;">
+        <span id="wwt1MarketValue" class="recommendationText"></span><br />
+        <span id="wwt1Cost" class="recommendationText"></span><br />
+        <img src="wwt1.jpg" alt="Display WWT1 Cabin Img"><br />
+        <span id="wwt1Recommendation" class="recommendationText2"></span>
+    </p>
+    <p id="littleBoyInfo" style="display: none;">
+        <span id="littleBoyMarketValue" class="recommendationText"></span><br />
+        <span id="littleBoyCost" class="recommendationText"></span><br />
+        <img src="littleBoy.jpg" alt="Display Little Boy Canon Img"><br />
+        <span id="littleBoyRecommendation" class="recommendationText2"></span>
+    </p>
+    <br />
+    </h3>
+    </li>
+    </ul>
+    <hr />
+    <div id="donationLink">
+        <p class="footerText"><a href="https://streamelements.com/shockradio-9562/tip" target="_blank">DONATE </a><br />
+            to support our
+            work!
+            <br />This is a community funded project. Any help is greatly appreciated to help maintain and
+            progress our site!<br />
+            Thank you,<br />
+            ShockRadio
+        </p>
+
+    </div>
+    <script src="CRAFTOUT.js"></script>
+</body>
+
+</html>
