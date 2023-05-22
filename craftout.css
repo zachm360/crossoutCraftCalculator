@@ -24,7 +24,8 @@ body {
 #avengerInfo img,
 #dockerInfo img,
 #fuelBarrelInfo img,
-#littleBoyInfo img {
+#littleBoyInfo img,
+#spitfireInfo img {
     /* Add your desired styles here */
     margin-top: 2em;
     /* Adjust the value as needed for the desired spacing between the text and the image */
