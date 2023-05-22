@@ -2,6 +2,16 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CRAFTOUT is a tool for calculating the crafting cost of items, primarily for XBOX and Playstationconsole players to save coin. Determine if it you should CRAFT or BUY with the click of a button.">
+    <meta property="og:title" content="CRAFTOUT">
+    <meta property="og:description"
+        content="CRAFTOUT is a tool for calculating the crafting cost of items, primarily for XBOX and Playstationconsole players to save coin. Determine if it you should CRAFT or BUY with the click of a button.">
+    <meta property="og:image" content="CRAFTOUT.jpg">
+    <meta property="og:url" content="www.craftout.net">
+    <meta property="og:type" content="website">
     <title>Crossout Craft Calculator</title>
     <link rel="stylesheet" href="craftout.css" />
 </head>
@@ -131,6 +141,7 @@
                     <option value="avenger">Avenger</option>
                     <option value="docker">Docker Cabin</option>
                     <option value="mediumWheel">Medium Wheel</option>
+                    <option value="mediumWheelSt">Medium Wheel St</option>
                     <option value="fuelBarrel">Fuel Barrel</option>
                     <option value="aviator">Aviator</option>
                     <option value="wwt1">WWT1 Cabin</option>
@@ -148,69 +159,88 @@
         <span id="chordRecommendation" class="recommendationText2"></span>
     </p>
     <p id="carJackInfo" style="display: none;">
-        <span id="carJackMarketValue"></span><br />
-        <span id="carJackCost"></span><br />
-        <span id="carJackRecommendation"></span><br />
+        <span id="carJackMarketValue" class="recommendationText"></span><br />
+        <span id="carJackCost" class="recommendationText"></span><br />
+        <img src="carJack.jpg" alt="Display Car Jack Img"><br />
+        <span id="carJackRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="huntsmanInfo" style="display: none;">
-        <span id="huntsmanMarketValue"></span><br />
-        <span id="huntsmanCost"></span><br />
-        <span id="huntsmanRecommendation"></span><br />
+        <span id="huntsmanMarketValue" class="recommendationText"></span><br />
+        <span id="huntsmanCost" class="recommendationText"></span><br />
+        <img src="huntsman.jpg" alt="Display Huntsman Cabin Img"><br />
+        <span id="huntsmanRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="sprinterCabInfo" style="display: none;">
-        <span id="sprinterCabMarketValue"></span><br />
-        <span id="sprinterCabCost"></span><br />
-        <span id="sprinterCabRecommendation"></span><br />
+        <span id="sprinterCabMarketValue" class="recommendationText"></span><br />
+        <span id="sprinterCabCost" class="recommendationText"></span><br />
+        <img src="sprinter.jpg" alt="Display Sprinter Img"><br />
+        <span id="sprinterCabRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="smallWheelInfo" style="display: none;">
-        <span id="smallWheelMarketValue"></span><br />
-        <span id="smallWheelCost"></span><br />
-        <span id="smallWheelRecommendation"></span><br />
+        <span id="smallWheelMarketValue" class="recommendationText"></span><br />
+        <span id="smallWheelCost" class="recommendationText"></span><br />
+        <img src="smallWheel.jpg" alt="Display Small Wheel Img"><br />
+        <span id="smallWheelRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="smallWheelStInfo" style="display: none;">
-        <span id="smallWheelStMarketValue"></span><br />
-        <span id="smallWheelStCost"></span><br />
-        <span id="smallWheelStRecommendation"></span><br />
+        <span id="smallWheelStMarketValue" class="recommendationText"></span><br />
+        <span id="smallWheelStCost" class="recommendationText"></span><br />
+        <img src="smallWheelSt.jpg" alt="Display Small Wheel Img"><br />
+        <span id="smallWheelStRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="luparaInfo" style="display: none;">
-        <span id="luparaMarketValue"></span><br />
-        <span id="luparaCost"></span><br />
-        <span id="luparaRecommendation"></span><br />
+        <span id="luparaMarketValue" class="recommendationText"></span><br />
+        <span id="luparaCost" class="recommendationText"></span><br />
+        <img src="lupara.jpg" alt="Display Lupara Img"><br />
+        <span id="luparaRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="radioInfo" style="display: none;">
-        <span id="radioMarketValue"></span><br />
-        <span id="radioCost"></span><br />
-        <span id="radioRecommendation"></span><br />
+        <span id="radioMarketValue" class="recommendationText"></span><br />
+        <span id="radioCost" class="recommendationText"></span><br />
+        <img src="radio.jpg" alt="Display Radio Img"><br />
+        <span id="radioRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="r1BreezeInfo" style="display: none;">
-        <span id="r1BreezeMarketValue"></span><br />
-        <span id="r1BreezeCost"></span><br />
-        <span id="r1BreezeRecommendation"></span><br />
+        <span id="r1BreezeMarketValue" class="recommendationText"></span><br />
+        <span id="r1BreezeCost" class="recommendationText"></span><br />
+        <img src="r1Breeze.jpg" alt="Display R1 Breeze Img"><br />
+        <span id="r1BreezeRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="rubyInfo" style="display: none;">
-        <span id="rubyMarketValue"></span><br />
-        <span id="rubyCost"></span><br />
-        <span id="rubyRecommendation"></span><br />
+        <span id="rubyMarketValue" class="recommendationText"></span><br />
+        <span id="rubyCost" class="recommendationText"></span><br />
+        <img src="ruby.jpg" alt="Display Ruby Img"><br />
+        <span id="rubyRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="avengerInfo" style="display: none;">
-        <span id="avengerMarketValue"></span><br />
-        <span id="avengerCost"></span><br />
-        <span id="avengerRecommendation"></span><br />
+        <span id="avengerMarketValue" class="recommendationText"></span><br />
+        <span id="avengerCost" class="recommendationText"></span><br />
+        <img src="avenger.jpg" alt="Display Avenger Canon Img"><br />
+        <span id="avengerRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="dockerInfo" style="display: none;">
-        <span id="dockerMarketValue"></span><br />
-        <span id="dockerCost"></span><br />
-        <span id="dockerRecommendation"></span><br />
+        <span id="dockerMarketValue" class="recommendationText"></span><br />
+        <span id="dockerCost" class="recommendationText"></span><br />
+        <img src="docker.jpg" alt="Display Docker Img"><br />
+        <span id="dockerRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="mediumWheelInfo" style="display: none;">
-        <span id="mediumWheelMarketValue"></span><br />
-        <span id="mediumWheelCost"></span><br />
-        <span id="mediumWheelRecommendation"></span><br />
+        <span id="mediumWheelMarketValue" class="recommendationText"></span><br />
+        <span id="mediumWheelCost" class="recommendationText"></span><br />
+        <img src="mediumWheel.jpg" alt="Display Medium Wheel Img"><br />
+        <span id="mediumWheelRecommendation" class="recommendationText2"></span><br />
+    </p>
+    <p id="mediumWheelStInfo" style="display: none;">
+        <span id="mediumWheelStMarketValue" class="recommendationText"></span><br />
+        <span id="mediumWheelStCost" class="recommendationText"></span><br />
+        <img src="mediumWheelSt.jpg" alt="Display Medium Wheel St Img"><br />
+        <span id="mediumWheelStRecommendation" class="recommendationText2"></span>
     </p>
     <p id="fuelBarrelInfo" style="display: none;">
-        <span id="fuelBarrelMarketValue"></span><br />
-        <span id="fuelBarrelCost"></span><br />
-        <span id="fuelBarrelRecommendation"></span><br />
+        <span id="fuelBarrelMarketValue" class="recommendationText"></span><br />
+        <span id="fuelBarrelCost" class="recommendationText"></span><br />
+        <img src="fuelBarrel.jpg" alt="Display Fuel Barrel Img"><br />
+        <span id="fuelBarrelRecommendation" class="recommendationText2"></span><br />
     </p>
     <p id="aviatorInfo" style="display: none;">
         <span id="aviatorMarketValue" class="recommendationText"></span><br />
