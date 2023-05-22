@@ -45,6 +45,7 @@ function updateItemOptions() {
         addItemOption("smallWheel", "Small Wheel");
         addItemOption("smallWheelSt", "Small Wheel St");
         addItemOption("mediumWheel", "Medium Wheel");
+        addItemOption("mediumWheelSt", "Medium Wheel St");
     }
 
     // Add more conditions for other item options
@@ -146,6 +147,8 @@ function submitCraftingCost() {
         getDockerCost();
     } else if (selectedItem === "mediumWheel") {
         getMediumWheelCost();
+    } else if (selectedItem === "mediumWheelSt") {
+        getMediumWheelStCost();
     } else if (selectedItem === "fuelBarrel") {
         getFuelBarrelCost();
     } else if (selectedItem === "aviator") {
@@ -487,6 +490,31 @@ function getMediumWheelCost() {
         mediumWheelRecommendationElement.textContent = "You should craft the Medium Wheel.";
     }
     mediumWheelInfoElement.style.display = "block";
+}
+function getMediumWheelStCost() {
+    let scrapValue100 = parseFloat(document.getElementById("scrapValue").value);
+    let copperValue100 = parseFloat(document.getElementById("copperValue").value);
+    let mediumWheelStScrap = scrapValue100 * .15;
+    let mediumWheelStCopper = copperValue100 * .03;
+    let mediumWheelStCost = mediumWheelStScrap + mediumWheelStCopper;
+    let mediumWheelStMarketValue = parseFloat(prompt("What is the current market price of a Medium Wheel St ?"))
+    console.log("The cost to craft a Medium Wheel is " + mediumWheelStCost);
+    let mediumWheelStMarketValueElement = document.getElementById("mediumWheelStMarketValue");
+    mediumWheelStMarketValueElement.textContent = "The current Buy Price of the Medium Wheel St " + mediumWheelStMarketValue + " coin.";
+    let mediumWheelStCostElement = document.getElementById("mediumWheelStCost");
+    mediumWheelStCostElement.textContent = " The cost to craft a Medium Wheel St is " + mediumWheelStCost + " coin.";
+    let mediumWheelStRecommendationElement = document.getElementById("mediumWheelStRecommendation");
+    mediumWheelStRecommendationElement.textContent = mediumWheelStRecommendation;
+    let mediumWheelStInfoElement = document.getElementById("mediumWheelStInfo");
+
+    if (isNaN(mediumWheelStCost)) {
+        mediumWheelStRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
+    } else if (mediumWheelStCost >= mediumWheelStMarketValue) {
+        mediumWheelStRecommendationElement.textContent = "You should buy the Medium Wheel St.";
+    } else {
+        mediumWheelStRecommendationElement.textContent = "You should craft the Medium Wheel St.";
+    }
+    mediumWheelStInfoElement.style.display = "block";
 }
 
 // Fuel Barrel Cost //
