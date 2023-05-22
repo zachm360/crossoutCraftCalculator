@@ -206,9 +206,9 @@ function getCarJackCost() {
     if (isNaN(carJackCost)) {
         carJackRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (carJackCost >= carJackMarketValue) {
-        carJackRecommendationElement.textContent = "You should buy the Carjack.";
+        carJackRecommendationElement.textContent = "Buy the Car jack for an estimated savings of " + (carJackCost - carJackMarketValue) + " coin";
     } else {
-        carJackRecommendationElement.textContent = "You should craft the Carjack.";
+        carJackRecommendationElement.textContent = "Craft the Car Jack for an estimated savings of " + (carJackMarketValue - carJackCost) + " coin";
     }
     carJackInfoElement.style.display = "block";
 }
@@ -231,9 +231,9 @@ function getSprinterCabCost() {
     if (isNaN(sprinterCabCost)) {
         sprinterCabRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (sprinterCabCost >= sprinterCabMarketValue) {
-        sprinterCabRecommendationElement.textContent = "You should buy the Sprinter Cabin.";
+        sprinterCabRecommendationElement.textContent = "Buy the Sprinter Cabin for an estimated savings of " + (sprinterCabCost - sprinterCabMarketValue) + " coin";
     } else {
-        sprinterCabRecommendationElement.textContent = "You should craft the Sprinter Cabin.";
+        sprinterCabRecommendationElement.textContent = "Craft the Sprinter Cabin for an estimated savings of " + (sprinterCabMarketValue - sprinterCabCost) + " coin";
     }
     sprinterCabInfoElement.style.display = "block";
 }
@@ -244,7 +244,7 @@ function getSmallWheelCost() {
     let smallWheelScrap = scrapValue100 * .15;
     let smallWheelCopper = copperValue100 * .03;
     let smallWheelCost = smallWheelScrap + smallWheelCopper;
-    let smallWheelMarketValue = parseFloat(prompt("What is the current market price of a Small Wheel?"));
+    let smallWheelMarketValue = parseFloat(prompt("What is the current market price of a Small Wheel?") * 2);
     console.log("The cost to craft a Small Wheel is " + smallWheelCost);
     let smallWheelMarketValueElement = document.getElementById("smallWheelMarketValue");
     smallWheelMarketValueElement.textContent = "The current Buy Price of the Small Wheel is " + smallWheelMarketValue + " coin.";
@@ -257,9 +257,9 @@ function getSmallWheelCost() {
     if (isNaN(smallWheelCost)) {
         smallWheelRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (smallWheelCost >= smallWheelMarketValue) {
-        smallWheelRecommendationElement.textContent = "You should buy the Small Wheel.";
+        smallWheelRecommendationElement.textContent = "Buy the Small Wheel for an estimated savings of " + (smallWheelCost - smallWheelMarketValue) + " coin";
     } else {
-        smallWheelRecommendationElement.textContent = "You should craft the Small Wheel.";
+        smallWheelRecommendationElement.textContent = "Craft the Small Wheel for an estimated savings of " + (smallWheelMarketValue - smallWheelCost) + " coin";
     }
     smallWheelInfoElement.style.display = "block";
 }
@@ -283,9 +283,9 @@ function getHuntsmanCost() {
     if (isNaN(huntsmanCost)) {
         huntsmanRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (huntsmanCost >= huntsmanMarketValue) {
-        huntsmanRecommendationElement.textContent = "You should buy the Huntsman Cabin.";
+        huntsmanRecommendationElement.textContent = "Buy the Huntsman for an estimated savings of " + (huntsmanCost - huntsmanMarketValue) + " coin";
     } else {
-        huntsmanRecommendationElement.textContent = "You should craft the Huntsman Cabin.";
+        huntsmanRecommendationElement.textContent = "Craft the Huntsman for an estimated savings of " + (huntsmanMarketValue - huntsmanCost) + " coin";
     }
     huntsmanInfoElement.style.display = "block";
 }
@@ -308,9 +308,9 @@ function getLuparaCost() {
     if (isNaN(luparaCost)) {
         luparaRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (luparaCost >= luparaMarketValue) {
-        luparaRecommendationElement.textContent = "You should buy the lupara.";
+        luparaRecommendationElement.textContent = "Buy the Lupara Shotgun for an estimated savings of " + (luparaCost - luparaMarketValue) + " coin";
     } else {
-        luparaRecommendationElement.textContent = "You should craft the lupara.";
+        luparaRecommendationElement.textContent = "Craft the Lupara Shotgun for an estimated savings of " + (luparaMarketValue - luparaCost) + " coin";
     }
     luparaInfoElement.style.display = "block";
 }
@@ -321,7 +321,7 @@ function getSmallWheelStCost() {
     let smallWheelStScrap = scrapValue100 * .15;
     let smallWheelStCopper = copperValue100 * .03;
     let smallWheelStCost = smallWheelStScrap + smallWheelStCopper;
-    let smallWheelStMarketValue = parseFloat(prompt("What is the current market price of a Small Wheel St?"));
+    let smallWheelStMarketValue = parseFloat(prompt("What is the current market price of a Small Wheel St?") * 2);
     console.log("The cost to craft a Small Wheel is " + smallWheelStCost);
     let smallWheelStMarketValueElement = document.getElementById("smallWheelStMarketValue");
     smallWheelStMarketValueElement.textContent = "The current Buy Price of the Small Wheel St is " + smallWheelStMarketValue + " coin.";
@@ -333,9 +333,9 @@ function getSmallWheelStCost() {
     if (isNaN(smallWheelStCost)) {
         smallWheelStRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (smallWheelStCost >= smallWheelStMarketValue) {
-        smallWheelStRecommendationElement.textContent = "You should buy the Small Wheel St.";
+        smallWheelStRecommendationElement.textContent = "Buy the Small Wheel St for an estimated savings of " + (smallWheelStCost - smallWheelStMarketValue) + " coin";
     } else {
-        smallWheelStRecommendationElement.textContent = "You should craft the Small Wheel St.";
+        smallWheelStRecommendationElement.textContent = "Craft the Small Wheel St for an estimated savings of " + (smallWheelStMarketValue - smallWheelStCost) + " coin";
     }
     smallWheelStInfoElement.style.display = "block";
 }
@@ -358,9 +358,9 @@ function getRadioCost() {
     if (isNaN(radioCost)) {
         radioRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (radioCost >= radioMarketValue) {
-        radioRecommendationElement.textContent = "You should buy the Radio.";
+        radioRecommendationElement.textContent = "Buy the Radio for an estimated savings of " + (radioCost - radioMarketValue) + " coin";
     } else {
-        radioRecommendationElement.textContent = "You should craft the Radio.";
+        radioRecommendationElement.textContent = "Craft the Radio for an estimated savings of " + (radioMarketValue - radioCost) + " coin";
     }
     radioInfoElement.style.display = "block";
 }
@@ -383,9 +383,9 @@ function getR1BreezeCost() {
     if (isNaN(r1BreezeCost)) {
         r1BreezeRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (r1BreezeCost >= r1BreezeMarketValue) {
-        r1BreezeRecommendationElement.textContent = "You should buy the R1 Breeze.";
+        r1BreezeRecommendationElement.textContent = "Buy the R1 Breeze for an estimated savings of " + (r1BreezeCost - r1BreezeMarketValue) + " coin";
     } else {
-        r1BreezeRecommendationElement.textContent = "You should craft the R1 Breeze.";
+        r1BreezeRecommendationElement.textContent = "Craft the R1 Breeze for an estimated savings of " + (r1BreezeMarketValue - r1BreezeCost) + " coin";
     }
     r1BreezeInfoElement.style.display = "block";
 }
@@ -408,9 +408,9 @@ function getRubyCost() {
     if (isNaN(rubyCost)) {
         rubyRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (rubyCost >= rubyMarketValue) {
-        rubyRecommendationElement.textContent = "You should buy the RS-1 Ruby.";
+        rubyRecommendationElement.textContent = "Buy the Ruby Radar for an estimated savings of " + (rubyCost - rubyMarketValue) + " coin";
     } else {
-        rubyRecommendationElement.textContent = "You should craft the RS-1 Ruby.";
+        rubyRecommendationElement.textContent = "Craft the Ruby Radar for an estimated savings of " + (rubyMarketValue - rubyCost) + " coin";
     }
     rubyInfoElement.style.display = "block";
 }
@@ -433,9 +433,9 @@ function getAvengerCost() {
     if (isNaN(avengerCost)) {
         avengerRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (avengerCost >= avengerMarketValue) {
-        avengerRecommendationElement.textContent = "You should buy the Avenger.";
+        avengerRecommendationElement.textContent = "Buy the Avenger Canon for an estimated savings of " + (avengerCost - avengerMarketValue) + " coin";
     } else {
-        avengerRecommendationElement.textContent = "You should craft the Avenger.";
+        avengerRecommendationElement.textContent = "Craft the Avenger for an estimated savings of " + (avengerMarketValue - avengerCost) + " coin";
     }
     avengerInfoElement.style.display = "block";
 }
@@ -459,9 +459,9 @@ function getDockerCost() {
     if (isNaN(dockerCost)) {
         dockerRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (dockerCost >= dockerMarketValue) {
-        dockerRecommendationElement.textContent = "You should buy the Docker Cabin.";
+        dockerRecommendationElement.textContent = "Buy the Docker Cabin for an estimated savings of " + (dockerCost - dockerMarketValue) + " coin";
     } else {
-        dockerRecommendationElement.textContent = "You should craft the Docker Cabin.";
+        dockerRecommendationElement.textContent = "Craft the Docker Cabin  for an estimated savings of " + (dockerMarketValue - dockerCost) + " coin";
     }
     dockerInfoElement.style.display = "block";
 }
@@ -472,7 +472,7 @@ function getMediumWheelCost() {
     let mediumWheelScrap = scrapValue100 * .15;
     let mediumWheelCopper = copperValue100 * .03;
     let mediumWheelCost = mediumWheelScrap + mediumWheelCopper;
-    let mediumWheelMarketValue = parseFloat(prompt("What is the current market price of a Medium Wheel ?"))
+    let mediumWheelMarketValue = parseFloat(prompt("What is the current market price of a Medium Wheel?") * 2)
     console.log("The cost to craft a Medium Wheel is " + mediumWheelCost);
     let mediumWheelMarketValueElement = document.getElementById("mediumWheelMarketValue");
     mediumWheelMarketValueElement.textContent = "The current Buy Price of the Medium Wheel " + mediumWheelMarketValue + " coin.";
@@ -485,9 +485,9 @@ function getMediumWheelCost() {
     if (isNaN(mediumWheelCost)) {
         mediumWheelRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (mediumWheelCost >= mediumWheelMarketValue) {
-        mediumWheelRecommendationElement.textContent = "You should buy the Medium Wheel.";
+        mediumWheelRecommendationElement.textContent = "Buy the Medium Wheel for an estimated savings of " + (mediumWheelCost - mediumWheelMarketValue) + " coin";
     } else {
-        mediumWheelRecommendationElement.textContent = "You should craft the Medium Wheel.";
+        mediumWheelRecommendationElement.textContent = "Craft the Medium Wheel for an estimated savings of " + (mediumWheelMarketValue - mediumWheelCost) + " coin";
     }
     mediumWheelInfoElement.style.display = "block";
 }
@@ -497,7 +497,7 @@ function getMediumWheelStCost() {
     let mediumWheelStScrap = scrapValue100 * .15;
     let mediumWheelStCopper = copperValue100 * .03;
     let mediumWheelStCost = mediumWheelStScrap + mediumWheelStCopper;
-    let mediumWheelStMarketValue = parseFloat(prompt("What is the current market price of a Medium Wheel St ?"))
+    let mediumWheelStMarketValue = parseFloat(prompt("What is the current market price of a Medium Wheel St?") * 2)
     console.log("The cost to craft a Medium Wheel is " + mediumWheelStCost);
     let mediumWheelStMarketValueElement = document.getElementById("mediumWheelStMarketValue");
     mediumWheelStMarketValueElement.textContent = "The current Buy Price of the Medium Wheel St " + mediumWheelStMarketValue + " coin.";
@@ -510,9 +510,9 @@ function getMediumWheelStCost() {
     if (isNaN(mediumWheelStCost)) {
         mediumWheelStRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (mediumWheelStCost >= mediumWheelStMarketValue) {
-        mediumWheelStRecommendationElement.textContent = "You should buy the Medium Wheel St.";
+        mediumWheelStRecommendationElement.textContent = "Buy the Medium Wheel for St an estimated savings of " + (mediumWheelStCost - mediumWheelStMarketValue) + " coin";
     } else {
-        mediumWheelStRecommendationElement.textContent = "You should craft the Medium Wheel St.";
+        mediumWheelStRecommendationElement.textContent = "Craft the Medium Wheel St for an estimated savings of " + (mediumWheelStMarketValue - mediumWheelStCost) + " coin";
     }
     mediumWheelStInfoElement.style.display = "block";
 }
@@ -538,9 +538,9 @@ function getFuelBarrelCost() {
     if (isNaN(fuelBarrelCost)) {
         fuelBarrelRecommendationElement.textContent = "Invalid input. Please enter valid numeric values for resource market values.";
     } else if (fuelBarrelCost >= fuelBarrelMarketValue) {
-        fuelBarrelRecommendationElement.textContent = "You should buy the Fuel Barrel.";
+        fuelBarrelRecommendationElement.textContent = "Buy the Fuel Barrel for an estimated savings of " + (fuelBarrelCost - fuelBarrelMarketValue) + " coin";
     } else {
-        fuelBarrelRecommendationElement.textContent = "You should craft the Fuel Barrel.";
+        fuelBarrelRecommendationElement.textContent = "Craft the Fuel Barrel for an estimated savings of " + (fuelBarrelMarketValue - fuelBarrelCost) + " coin";
     }
     fuelBarrelInfoElement.style.display = "block";
 }
@@ -717,16 +717,3 @@ function getHardcoreCost() {
     else alert("You should craft a Hardcore Engine")
     console.log("The cost to craft a Hardcore Engine is " + hardcoreCost);
 }
-
-// getSpitfireCost();
-// getRapierCost();
-// getR2ChillCost();
-// getTaymyrCost();
-
-// Lunatics Faction //
-// getBlastoffCost();
-// getStuddedWheelCost();
-
-// Special Items //
-// Lunatics Faction //
-// getHardcoreCost ();
