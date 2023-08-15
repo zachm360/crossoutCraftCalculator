@@ -1007,3 +1007,15 @@ function submitCraftingCost() {
         console.log("The cost to craft a Hardcore Engine is " + hardcoreCost);
     }
 }
+// getSpitfireCost();
+// getRapierCost();
+// getR2ChillCost();
+// getTaymyrCost();
+
+// Lunatics Faction //
+// getBlastoffCost();
+// getStuddedWheelCost();
+
+// Special Items //
+// Lunatics Faction //
+// getHardcoreCost ();
