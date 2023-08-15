@@ -25,7 +25,13 @@ body {
 #dockerInfo img,
 #fuelBarrelInfo img,
 #littleBoyInfo img,
-#spitfireInfo img {
+#rapierInfo img,
+#r2ChillInfo img,
+#spitfireInfo img,
+#taymyrInfo img,
+#ammoPackInfo img,
+#horizonInfo img,
+#balloonTyreInfo img {
     /* Add your desired styles here */
     margin-top: 2em;
     /* Adjust the value as needed for the desired spacing between the text and the image */
