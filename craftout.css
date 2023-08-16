@@ -31,7 +31,15 @@ body {
 #taymyrInfo img,
 #ammoPackInfo img,
 #horizonInfo img,
-#balloonTyreInfo img {
+#balloonTyreInfo img,
+#blastoffInfo img,
+#studdedWheelInfo img,
+#studdedWheelStInfo img,
+#sledgehammerinfo img,
+#waspInfo img,
+#growlInfo img,
+#bigGInfo img,
+#chainedWheelInfo img {
     /* Add your desired styles here */
     margin-top: 2em;
     /* Adjust the value as needed for the desired spacing between the text and the image */
