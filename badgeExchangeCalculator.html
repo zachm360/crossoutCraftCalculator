@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CRAFTOUT is a tool for calculating the crafting cost of items, primarily for XBOX and Playstationconsole players to save coin. Determine if it you should CRAFT or BUY with the click of a button.">
+    <meta property="og:title" content="CRAFTOUT">
+    <meta property="og:description"
+        content="CRAFTOUT is a tool for calculating the crafting cost of items, primarily for XBOX and Playstationconsole players to save coin. Determine if it you should CRAFT or BUY with the click of a button.">
+    <meta property="og:image" content="craftout.jpg">
+    <meta property="og:url" content="www.craftout.net">
+    <meta property="og:type" content="website">
+    <title>Crossout Craft Calculator</title>
+    <link rel="stylesheet" href="craftout.css" />
+</head>
+
+<body>
+    <h1>CRAFTOUT</h1>
+    <br>
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="index.html">Crafting Calculator</a></li>
+            <li><a href="badgeExchangeCalculator.html">Badge Exchange Calculator</a></li>
+        </ul>
+    </nav>
+    <br>
+    <h2>CROSSOUT Badge Exchange Calculator</h2>
+    <p>Input the amount of resources you are getting, how many badges you are using, and how much 100 of the resource
+        of your choice costs! We do the rest for you!</p>
+    <table>
+        <!-- Table header row -->
+        <tr>
+            <td></td>
+            <th>Scrap x 100</th>
+            <th>Copper x 100</th>
+            <th>Wires x 100</th>
+            <th>Plastic x 100</th>
+            <th>Electronics x 100</th>
+            <th>Batteries x 100</th>
+        </tr>
+        <!-- Scrap row -->
+        <tr>
+            <td>Resource Market Cost x100</td>
+            <td><input type="number" step="any" id="scrapValue" required></td>
+            <td><input type="number" step="any" id="copperValue" required></td>
+            <td><input type="number" step="any" id="wiresValue" required></td>
+            <td><input type="number" step="any" id="plasticValue" required></td>
+            <td><input type="number" step="any" id="electronicsValue" required></td>
+            <td><input type="number" step="any" id="batteriesValue" required></td>
+        </tr>
+        <tr>
+            <td>Resource Exchange Rates</td>
+            <td><input type="number" step="any" id="scrapExchangeTotal" required></td>
+            <td><input type="number" step="any" id="copperExchangeTotal" required></td>
+            <td><input type="number" step="any" id="wiresExchangeTotal" required></td>
+            <td><input type="number" step="any" id="plasticExchangeTotal" required></td>
+            <td><input type="number" step="any" id="electronicsExchangeTotal" required></td>
+            <td><input type="number" step="any" id="batteriesExchangeTotal" required></td>
+        </tr>
+        <tr>
+            <td>Badge Exchange Rates</td>
+            <td><input type="number" step="any" id="scrapBER" required></td>
+            <td><input type="number" step="any" id="copperBER" required></td>
+            <td><input type="number" step="any" id="wiresBadgeTotal" required></td>
+            <td><input type="number" step="any" id="electronicsBadgeTotal" required></td>
+            <td><input type="number" step="any" id="plasticBadgeTotal" required></td>
+            <td><input type="number" step="any" id="batteriesBadgeTotal" required></td>
+        </tr>
+        <tr>
+            <td>Total Badges Traded</td>
+            <td><input type="number" step="any" id="scrapBadgeTotal" required></td>
+            <td><input type="number" step="any" id="copperBadgeTotal" required></td>
+            <td><input type="number" step="any" id="wiresBadgeTotal" required></td>
+            <td><input type="number" step="any" id="electronicsBadgeTotal" required></td>
+            <td><input type="number" step="any" id="plasticBadgeTotal" required></td>
+            <td><input type="number" step="any" id="batteriesBadgeTotal" required></td>
+        </tr>
+        <tr>
+            <td>Coin Return per Badge</td>
+            <td><span id="calculatedScrapCoinPerBadge"></span></td>
+            <td><span id="calculatedCopperCoinPerBadge"></span></td>
+            <td><span id="calculatedWiresCoinPerBadge"></span></td>
+            <td><span id="calculatedPlasticCoinPerBadge"></span></td>
+            <td><span id="calculatedElectronicsCoinPerBadge"></span></td>
+            <td><span id="calculatedBatteriesCoinPerBadge"></span></td>
+        </tr>
+
+        <tr>
+            <td>Total coin from Exchange</td>
+            <td><span id="calculatedScrapCoinTotalExchange"></span></td>
+            <td><span id="calculatedCopperCoinTotalExchange"></span></td>
+            <td><span id="calculatedWiresTotalExchange"></span></td>
+            <td><span id="calculatedPlasticTotalExchange"></span></td>
+            <td><span id="calculatedElectronicsTotalExchange"></span></td>
+            <td><span id="calculatedBatteriesTotalExchange"></span></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><button onclick="getScrapCoinPerBadge()" class="button-style">Calculate Scrap Exchange Rate</button>
+            </td>
+            <td><button onclick="getCopperCoinPerBadge()" class="button-style">Calculate Copper Exchange Rate</button>
+            </td>
+            <td><button onclick="getWiresCoinPerBadge()" class="button-style">Calculate Wires Exchange Rate</button>
+            </td>
+            <td><button onclick="getPlasticCoinPerBadge()" class="button-style">Calculate Plastic Exchange Rate</button>
+            </td>
+            <td><button onclick="getElectronicsCoinPerBadge()" class="button-style">Calculate Electronics Exchange
+                    Rate</button>
+            </td>
+            <td><button onclick="getBatteriesCoinPerBadge()" class="button-style">Calculate Electronics Exchange
+                    Rate</button>
+            </td>
+        </tr>
+
+    </table>
+
+    <script>
+        function getScrapCoinPerBadge() {
+            let scrapValue100 = parseFloat(document.getElementById("scrapValue").value);
+            let scrapBadgeTotal = parseFloat(document.getElementById("scrapBadgeTotal").value);
+            let scrapPerBadge = parseFloat(document.getElementById("scrapExchangeTotal").value) / parseFloat(document.getElementById("scrapBER").value);
+            let badgesPer100Scrap = 100 / scrapPerBadge;
+            let scrapCoinPerBadge = scrapValue100 / badgesPer100Scrap;
+            document.getElementById("calculatedScrapCoinPerBadge").textContent = "Scrap Coin per Badge is " + scrapCoinPerBadge;
+            let calculatedScrapCoinTotalExchange = scrapBadgeTotal * scrapCoinPerBadge; // Corrected line
+            document.getElementById("calculatedScrapCoinTotalExchange").textContent = "Total Coin from Scrap Trade " + calculatedScrapCoinTotalExchange;
+            console.log("Scrap Coin per Badge is " + scrapCoinPerBadge);
+            console.log("Total Coin from Scrap Trade " + calculatedScrapCoinTotalExchange);
+        }
+        function getCopperCoinPerBadge() {
+            let copperValue100 = parseFloat(document.getElementById("copperValue").value);
+            let copperPerBadge = parseFloat(document.getElementById("copperExchangeTotal").value) / parseFloat(document.getElementById("copperBER").value);
+            let badgesPer100Copper = 100 / copperPerBadge;
+            let copperCoinPerBadge = copperValue100 / badgesPer100Copper;
+            document.getElementById("calculatedCopperCoinPerBadge").textContent = "Copper Coin per Badge is " + copperCoinPerBadge;
+            let copperBadgeTotal = parseFloat(document.getElementById("copperBadgeTotal").value);
+            let calculatedCopperCoinTotalExchange = copperBadgeTotal * copperCoinPerBadge;
+            document.getElementById("calculatedCopperCoinTotalExchange").textContent = "Total Coin from Copper Trade " + calculatedCopperCoinTotalExchange;
+            console.log("Copper Coin per Badge is " + copperCoinPerBadge);
+        }
+        function getWiresCoinPerBadge() {
+            let wiresValue100 = parseFloat(document.getElementById("wiresValue").value);
+            let wiresPerBadge = parseFloat(document.getElementById("wiresExchangeTotal").value) / parseFloat(document.getElementById("wiresBadgeTotal").value);
+            let badgesPer100wires = 100 / wiresPerBadge;
+            let wiresCoinPerBadge = wiresValue100 / badgesPer100wires;
+            document.getElementById("calculatedWiresCoinPerBadge").textContent = "wires Coin per Badge is " + wiresCoinPerBadge;
+            let calculatedWiresCoinTotalExchange = wiresBadgeTotal * wiresCoinPerBadge;
+            document.getElementById("calculatedWiresCoinTotalExchange").textContent = "Total Coin from wires Trade " + calculatedWiresCoinTotalExchange;
+
+            console.log("wires Coin per Badge is " + wiresCoinPerBadge);
+        }
+        function getPlasticCoinPerBadge() {
+            let plasticValue100 = parseFloat(document.getElementById("plasticValue").value);
+            let plasticPerBadge = parseFloat(document.getElementById("plasticExchangeTotal").value) / parseFloat(document.getElementById("plasticBadgeTotal").value);
+            let badgesPer100plastic = 100 / plasticPerBadge;
+            let plasticCoinPerBadge = plasticValue100 / badgesPer100plastic;
+            document.getElementById("calculatedPlasticCoinPerBadge").textContent = "plastic Coin per Badge is " + plasticCoinPerBadge;
+            console.log("plastic Coin per Badge is " + plasticCoinPerBadge);
+        }
+        function getElectronicsCoinPerBadge() {
+            let electronicsValue100 = parseFloat(document.getElementById("electronicsValue").value);
+            let electronicsPerBadge = parseFloat(document.getElementById("electronicsExchangeTotal").value) / parseFloat(document.getElementById("electronicsBadgeTotal").value);
+            let badgesPer100electronics = 100 / electronicsPerBadge;
+            let electronicsCoinPerBadge = electronicsValue100 / badgesPer100electronics;
+            document.getElementById("calculatedElectronicsCoinPerBadge").textContent = "electronics Coin per Badge is " + electronicsCoinPerBadge;
+            console.log("electronics Coin per Badge is " + electronicsCoinPerBadge);
+        }
+        function getBatteriesCoinPerBadge() {
+            let batteriesValue100 = parseFloat(document.getElementById("batteriesValue").value);
+            let batteriesPerBadge = parseFloat(document.getElementById("batteriesExchangeTotal").value) / parseFloat(document.getElementById("batteriesBadgeTotal").value);
+            let badgesPer100batteries = 100 / batteriesPerBadge;
+            let batteriesCoinPerBadge = batteriesValue100 / badgesPer100batteries;
+            document.getElementById("calculatedBatteriesCoinPerBadge").textContent = "batteries Coin per Badge is " + batteriesCoinPerBadge;
+            console.log("batteries Coin per Badge is " + batteriesCoinPerBadge);
+        }
+    </script>
+</body>
+
+</html>
