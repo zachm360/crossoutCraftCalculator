@@ -191,3 +191,33 @@ table {
 #donationLink a:hover {
     background-color: #3c3c3c;
 }
+
+/* Add this to your existing CSS */
+
+.nav-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    background-color: #222222;
+    overflow: hidden;
+    display: flex;
+
+}
+
+.nav-bar li {
+    margin: 0 10px;
+}
+
+.nav-bar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-bar a:hover {
+    background-color: #333333;
+    transition: background-color 0.3s ease;
+}
