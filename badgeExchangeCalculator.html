@@ -63,18 +63,18 @@
             <td>Badge Exchange Rates</td>
             <td><input type="number" step="any" id="scrapBER" required></td>
             <td><input type="number" step="any" id="copperBER" required></td>
-            <td><input type="number" step="any" id="wiresBadgeTotal" required></td>
-            <td><input type="number" step="any" id="electronicsBadgeTotal" required></td>
-            <td><input type="number" step="any" id="plasticBadgeTotal" required></td>
-            <td><input type="number" step="any" id="batteriesBadgeTotal" required></td>
+            <td><input type="number" step="any" id="wiresBER" required></td>
+            <td><input type="number" step="any" id="plasticBER" required></td>
+            <td><input type="number" step="any" id="electronicsBER" required></td>
+            <td><input type="number" step="any" id="batteriesBER" required></td>
         </tr>
         <tr>
             <td>Total Badges Traded</td>
             <td><input type="number" step="any" id="scrapBadgeTotal" required></td>
             <td><input type="number" step="any" id="copperBadgeTotal" required></td>
             <td><input type="number" step="any" id="wiresBadgeTotal" required></td>
-            <td><input type="number" step="any" id="electronicsBadgeTotal" required></td>
             <td><input type="number" step="any" id="plasticBadgeTotal" required></td>
+            <td><input type="number" step="any" id="electronicsBadgeTotal" required></td>
             <td><input type="number" step="any" id="batteriesBadgeTotal" required></td>
         </tr>
         <tr>
@@ -91,10 +91,10 @@
             <td>Total coin from Exchange</td>
             <td><span id="calculatedScrapCoinTotalExchange"></span></td>
             <td><span id="calculatedCopperCoinTotalExchange"></span></td>
-            <td><span id="calculatedWiresTotalExchange"></span></td>
-            <td><span id="calculatedPlasticTotalExchange"></span></td>
-            <td><span id="calculatedElectronicsTotalExchange"></span></td>
-            <td><span id="calculatedBatteriesTotalExchange"></span></td>
+            <td><span id="calculatedWiresCoinTotalExchange"></span></td>
+            <td><span id="calculatedPlasticCoinTotalExchange"></span></td>
+            <td><span id="calculatedElectronicsCoinTotalExchange"></span></td>
+            <td><span id="calculatedBatteriesCoinTotalExchange"></span></td>
         </tr>
 
         <tr>
@@ -110,7 +110,7 @@
             <td><button onclick="getElectronicsCoinPerBadge()" class="button-style">Calculate Electronics Exchange
                     Rate</button>
             </td>
-            <td><button onclick="getBatteriesCoinPerBadge()" class="button-style">Calculate Electronics Exchange
+            <td><button onclick="getBatteriesCoinPerBadge()" class="button-style">Calculate Batteries Exchange
                     Rate</button>
             </td>
         </tr>
@@ -141,40 +141,54 @@
             document.getElementById("calculatedCopperCoinTotalExchange").textContent = "Total Coin from Copper Trade " + calculatedCopperCoinTotalExchange;
             console.log("Copper Coin per Badge is " + copperCoinPerBadge);
         }
+
         function getWiresCoinPerBadge() {
             let wiresValue100 = parseFloat(document.getElementById("wiresValue").value);
-            let wiresPerBadge = parseFloat(document.getElementById("wiresExchangeTotal").value) / parseFloat(document.getElementById("wiresBadgeTotal").value);
+            let wiresBadgeTotal = parseFloat(document.getElementById("wiresBadgeTotal").value);
+            let wiresPerBadge = parseFloat(document.getElementById("wiresExchangeTotal").value) / parseFloat(document.getElementById("wiresBER").value);
             let badgesPer100wires = 100 / wiresPerBadge;
             let wiresCoinPerBadge = wiresValue100 / badgesPer100wires;
             document.getElementById("calculatedWiresCoinPerBadge").textContent = "wires Coin per Badge is " + wiresCoinPerBadge;
-            let calculatedWiresCoinTotalExchange = wiresBadgeTotal * wiresCoinPerBadge;
+            let calculatedWiresCoinTotalExchange = wiresBadgeTotal * wiresCoinPerBadge; // Corrected line
             document.getElementById("calculatedWiresCoinTotalExchange").textContent = "Total Coin from wires Trade " + calculatedWiresCoinTotalExchange;
-
-            console.log("wires Coin per Badge is " + wiresCoinPerBadge);
+            console.log("Wires Coin per Badge is " + wiresCoinPerBadge);
+            console.log("Total Coin from wires Trade " + calculatedWiresCoinTotalExchange);
         }
         function getPlasticCoinPerBadge() {
             let plasticValue100 = parseFloat(document.getElementById("plasticValue").value);
-            let plasticPerBadge = parseFloat(document.getElementById("plasticExchangeTotal").value) / parseFloat(document.getElementById("plasticBadgeTotal").value);
-            let badgesPer100plastic = 100 / plasticPerBadge;
-            let plasticCoinPerBadge = plasticValue100 / badgesPer100plastic;
+            let plasticBadgeTotal = parseFloat(document.getElementById("plasticBadgeTotal").value);
+            let plasticPerBadge = parseFloat(document.getElementById("plasticExchangeTotal").value) / parseFloat(document.getElementById("plasticBER").value);
+            let badgesPer100Plastic = 100 / plasticPerBadge;
+            let plasticCoinPerBadge = plasticValue100 / badgesPer100Plastic;
             document.getElementById("calculatedPlasticCoinPerBadge").textContent = "plastic Coin per Badge is " + plasticCoinPerBadge;
-            console.log("plastic Coin per Badge is " + plasticCoinPerBadge);
+            let calculatedPlasticCoinTotalExchange = plasticBadgeTotal * plasticCoinPerBadge; // Corrected line
+            document.getElementById("calculatedPlasticCoinTotalExchange").textContent = "Total Coin from plastic Trade " + calculatedPlasticCoinTotalExchange;
+            console.log("Plastic Coin per Badge is " + plasticCoinPerBadge);
+            console.log("Total Coin from plastic Trade " + calculatedPlasticCoinTotalExchange);
         }
         function getElectronicsCoinPerBadge() {
             let electronicsValue100 = parseFloat(document.getElementById("electronicsValue").value);
-            let electronicsPerBadge = parseFloat(document.getElementById("electronicsExchangeTotal").value) / parseFloat(document.getElementById("electronicsBadgeTotal").value);
+            let electronicsBadgeTotal = parseFloat(document.getElementById("electronicsBadgeTotal").value);
+            let electronicsPerBadge = parseFloat(document.getElementById("electronicsExchangeTotal").value) / parseFloat(document.getElementById("electronicsBER").value);
             let badgesPer100electronics = 100 / electronicsPerBadge;
             let electronicsCoinPerBadge = electronicsValue100 / badgesPer100electronics;
             document.getElementById("calculatedElectronicsCoinPerBadge").textContent = "electronics Coin per Badge is " + electronicsCoinPerBadge;
-            console.log("electronics Coin per Badge is " + electronicsCoinPerBadge);
+            let calculatedElectronicsCoinTotalExchange = electronicsBadgeTotal * electronicsCoinPerBadge; // Corrected line
+            document.getElementById("calculatedElectronicsCoinTotalExchange").textContent = "Total Coin from electronics Trade " + calculatedElectronicsCoinTotalExchange;
+            console.log("Electronics Coin per Badge is " + electronicsCoinPerBadge);
+            console.log("Total Coin from electronics Trade " + calculatedElectronicsCoinTotalExchange);
         }
         function getBatteriesCoinPerBadge() {
             let batteriesValue100 = parseFloat(document.getElementById("batteriesValue").value);
-            let batteriesPerBadge = parseFloat(document.getElementById("batteriesExchangeTotal").value) / parseFloat(document.getElementById("batteriesBadgeTotal").value);
-            let badgesPer100batteries = 100 / batteriesPerBadge;
-            let batteriesCoinPerBadge = batteriesValue100 / badgesPer100batteries;
+            let batteriesBadgeTotal = parseFloat(document.getElementById("batteriesBadgeTotal").value);
+            let batteriesPerBadge = parseFloat(document.getElementById("batteriesExchangeTotal").value) / parseFloat(document.getElementById("batteriesBER").value);
+            let badgesPer100Batteries = 100 / batteriesPerBadge;
+            let batteriesCoinPerBadge = batteriesValue100 / badgesPer100Batteries;
             document.getElementById("calculatedBatteriesCoinPerBadge").textContent = "batteries Coin per Badge is " + batteriesCoinPerBadge;
-            console.log("batteries Coin per Badge is " + batteriesCoinPerBadge);
+            let calculatedBatteriesCoinTotalExchange = batteriesBadgeTotal * batteriesCoinPerBadge; // Corrected line
+            document.getElementById("calculatedBatteriesCoinTotalExchange").textContent = "Total Coin from batteries Trade " + calculatedBatteriesCoinTotalExchange;
+            console.log("Batteries Coin per Badge is " + batteriesCoinPerBadge);
+            console.log("Total Coin from batteries Trade " + calculatedBatteriesCoinTotalExchange);
         }
     </script>
 </body>
