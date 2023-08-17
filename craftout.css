@@ -1,10 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #000000;
     color: #FFFFFF;
     text-align: center;
+}
+
+.center-container {
+    max-width: 800px;
+    /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    /* Center the container horizontally */
     padding: 20px;
-    box-sizing: border-box;
+    text-align: left;
+    /* Reset text alignment */
+}
+
+
+p {
+    margin: 1em 0;
+    max-width: 66%;
+    /* Set a maximum width for the paragraphs */
+    margin: 0 auto;
+    /* Center the paragraphs horizontally */
+}
+
+.separator-row {
+    border-bottom: 1px solid #000;
+    /* Adjust as needed */
 }
 
 #chordInfo img,
@@ -83,6 +111,7 @@ body {
     background-color: #222222;
     color: #FFFFFF;
     margin-bottom: 4px;
+    text-align: center;
 }
 
 .recommendationText2 {
@@ -128,6 +157,15 @@ h2 {
     margin-bottom: 10px;
 }
 
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 label {
     font-size: 18px;
     font-weight: bold;
@@ -163,7 +201,7 @@ hr {
     color: #847165;
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 70%;
+    width: 100%;
 
 }
 
@@ -195,29 +233,140 @@ table {
 /* Add this to your existing CSS */
 
 .nav-bar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
+    border-bottom: 2px solid #ff7f00;
     background-color: #222222;
-    overflow: hidden;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 33%;
+    margin: 0 auto;
+}
 
+.nav-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 
 .nav-bar li {
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .nav-bar a {
-    display: block;
     color: white;
-    text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .nav-bar a:hover {
+    color: #ff7f00;
+}
+
+/* Add a little animation for hover effect */
+.nav-bar a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #ff7f00;
+    transition: width 0.3s ease;
+}
+
+.nav-bar a:hover::after {
+    width: 100%;
+}
+
+
+
+/* Add this to your existing CSS */
+
+/* Apply consistent styling to table header */
+table th {
+    font-weight: bold;
+    background-color: #333333;
+    color: white;
+    padding: 10px;
+}
+
+/* Apply consistent styling to table cells */
+table td {
+    padding: 10px;
+    background-color: #222222;
+    color: white;
+    border: 1px solid #333333;
+    text-align: center;
+}
+
+/* Apply consistent styling to input fields */
+table input[type="number"] {
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #FF6600;
+    background-color: #222222;
+    color: #FFFFFF;
+    width: 100%;
+    /* Make sure input fields expand to fill the cell */
+    box-sizing: border-box;
+    /* Include padding and border in the width */
+}
+
+/* Apply consistent styling to buttons */
+.button-style {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #FF6600;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+/* Apply consistent styling to span elements */
+table span {
+    display: inline-block;
+    padding: 6px;
+    border-radius: 4px;
+    background-color: #222222;
+    color: white;
+}
+
+/* Apply consistent styling to the table rows */
+table tr {
+    text-align: center;
+    /* Center align the content in all cells */
+}
+
+/* Add hover effect to table rows */
+table tr:hover {
     background-color: #333333;
     transition: background-color 0.3s ease;
+}
+
+
+
+/* Apply consistent styling to select elements */
+table select {
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #FF6600;
+    background-color: #222222;
+    color: #FFFFFF;
+    width: 100%;
+    /* Make sure the select box expands to fill the cell */
+    box-sizing: border-box;
+    /* Include padding and border in the width */
+}
+
+/* Add responsive styling for smaller screens */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+        /* Decrease font size for smaller screens */
+    }
 }
