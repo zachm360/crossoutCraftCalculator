@@ -19,17 +19,24 @@
 </head>
 
 <body>
-    <h1>CRAFTOUT</h1>
+    <h1>CRAFTOUT.net</h1>
+    <h2>Craft - Exchange - Destroy</h2>
     <br>
     <nav>
         <ul class="nav-bar">
             <li><a href="index.html">Crafting Calculator</a></li>
             <li><a href="badgeExchangeCalculator.html">Badge Exchange Calculator</a></li>
+            <li><a href="https://linktr.ee/shockradiogaming" target="_blank">Extended Content</a></li>
+            <li><a href="https://store.streamelements.com/shockradio" target="_blank">ShockRadio/ Craftout
+                    Merchandise</a>
+            </li>
         </ul>
     </nav>
     <h2>CROSSOUT Crafting Calculator</h2>
-    <p> The site is still being created. Currently Engineer faction up to rare is complete as well as Lunatic Rare
-        items! To support this project, see below. Thank you</p>
+    <p> The site is actively being updated. Check out <a href="https://linktr.ee/shockradiogaming">Shock Radio
+            Gaming</a> to
+        help us grow! Thank you for your
+        patience!</p>
     <hr />
 
     <h2>Enter the current cost of resources below</h2>
@@ -86,6 +93,8 @@
                 <td>
                     <input type="number" step="any" id="uraniumValue" name="uraniumValue" required>
                 </td>
+                <td></td>
+                <td></td>
             </tr>
         </table>
         <br />
@@ -109,8 +118,10 @@
         When prompted, enter
         the cost of one wheel. </p>
     <table>
+        <th><label for="factions">Faction</label></th>
+        <th><label for="rarity">Item Rarity</label></th>
+        <th><label for="type">Item Type</label></th>
         <tr>
-            <td><label for="factions">Faction</label></td>
             <td><select name="factions" id="factions" class="workbenchOption">
 
                     <option value="engineers">Engineers</option>
@@ -120,7 +131,7 @@
             </td>
             </select>
 
-            <td><label for="rarity">Item Rarity</label></td>
+
             <td><select name="rarity" id="rarity" class="workbenchOption">
                     <option value="common">Common</option>
                     <option value="rare">Rare</option>
@@ -130,7 +141,7 @@
                     <option value="relic">Relic</option>
                 </select></td>
 
-            <td><label for="type">Item Type</label></td>
+
             <td><select name="type" id="type" class="workbenchOption">
                     <option value="cabin">Cabin</option>
                     <option value="movementParts">Movement Parts</option>
@@ -139,8 +150,12 @@
                 </select></td>
         </tr>
         <tr>
-            <td colspan="4"><label for="item">Select the item you want to craft</label></td>
-            <td colspan="2">
+
+            <td colspan="3"><label for="item">Select the item you want to craft</label></td>
+        </tr>
+        <tr>
+
+            <td colspan="3">
                 <select name="item" id="item" class="workbenchOption">
                     <option value="chord"> Chord</option>
                     <option value="sprinterCabin"> Sprinter Cabin</option>
@@ -180,6 +195,7 @@
                     <option value="chainedWheelST">Chained Wheel ST</option>
                 </select>
             </td>
+
         </tr>
     </table>
     <br />
@@ -405,12 +421,10 @@
     </li>
     </ul>
     <hr />
-    <div id="donationLink">
-        <p class="footerText"><a href="https://linktr.ee/shockradiogaming" target="_blank">Link Tree</a><br />
-            Thank you for visiting our site! Check out more content and leave a tip! Have a great day!
-        </p>
+    <p>This site is brought to you by <a href="https://linktr.ee/shockradiogaming"> Shock Radio Gaming</a>. Thank you
+        for
+        visiting, have a wonderful day! </p>
 
-    </div>
     <script src="CRAFTOUT.js"></script>
 </body>
 
