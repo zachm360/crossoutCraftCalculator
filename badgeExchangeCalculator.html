@@ -17,28 +17,47 @@
 </head>
 
 <body>
-    <h1>CRAFTOUT</h1>
+    <h1>CRAFTOUT.net</h1>
+    <h2>Craft - Exchange - Destroy</h2>
     <br>
     <nav>
         <ul class="nav-bar">
             <li><a href="index.html">Crafting Calculator</a></li>
             <li><a href="badgeExchangeCalculator.html">Badge Exchange Calculator</a></li>
+            <li><a href="https://linktr.ee/shockradiogaming" target="_blank">Extended Content</a></li>
+            <li><a href="https://store.streamelements.com/shockradio" target="_blank">ShockRadio/ Craftout
+                    Merchandise</a>
+            </li>
         </ul>
     </nav>
-    <br>
+    <hr />
+
     <h2>CROSSOUT Badge Exchange Calculator</h2>
-    <p>Input the amount of resources you are getting, how many badges you are using, and how much 100 of the resource
-        of your choice costs! We do the rest for you!</p>
+    <div class="center-container">
+        <h3> Know what to trade before you trade!</h3>
+        <br>
+        <p>
+        <ol>
+            <li>Enter the resource trade in value in stacks of 100. Ie. 100 Electronics.</li>
+            <li>
+                Enter Resource trade in for the week.</li>
+            <li> Enter the badge cost of those Resources.</li>
+            <li> Enter how many badges
+                you
+                wish to trade in for the week to see your total potential earnings for each trade!</li>
+        </ol>
+        </p>
+    </div>
     <table>
         <!-- Table header row -->
         <tr>
             <td></td>
-            <th>Scrap x 100</th>
-            <th>Copper x 100</th>
-            <th>Wires x 100</th>
-            <th>Plastic x 100</th>
-            <th>Electronics x 100</th>
-            <th>Batteries x 100</th>
+            <th>Scrap</th>
+            <th>Copper</th>
+            <th>Wires</th>
+            <th>Plastic</th>
+            <th>Electronics</th>
+            <th>Batteries</th>
         </tr>
         <!-- Scrap row -->
         <tr>
@@ -78,9 +97,9 @@
             <td><input type="number" step="any" id="batteriesBadgeTotal" required></td>
         </tr>
 
-        <tr class="separator-row">
-            <td>Coin Return per Badge</td>
-            <td><span id="calculatedScrapCoinPerBadge"></span></td>
+        <tr>
+            <td label for="calculatedScrapCoinPerBadge">Coin Return per Badge</td>
+            <td><span type="number" step="any" id="calculatedScrapCoinPerBadge"></span></td>
             <td><span id="calculatedCopperCoinPerBadge"></span></td>
             <td><span id="calculatedWiresCoinPerBadge"></span></td>
             <td><span id="calculatedPlasticCoinPerBadge"></span></td>
@@ -98,27 +117,18 @@
             <td><span id="calculatedBatteriesCoinTotalExchange"></span></td>
         </tr>
 
-        <tr>
-            <td></td>
-            <td><button onclick="getScrapCoinPerBadge()" class="button-style">Calculate Scrap Exchange Rate</button>
-            </td>
-            <td><button onclick="getCopperCoinPerBadge()" class="button-style">Calculate Copper Exchange Rate</button>
-            </td>
-            <td><button onclick="getWiresCoinPerBadge()" class="button-style">Calculate Wires Exchange Rate</button>
-            </td>
-            <td><button onclick="getPlasticCoinPerBadge()" class="button-style">Calculate Plastic Exchange Rate</button>
-            </td>
-            <td><button onclick="getElectronicsCoinPerBadge()" class="button-style">Calculate Electronics Exchange
-                    Rate</button>
-            </td>
-            <td><button onclick="getBatteriesCoinPerBadge()" class="button-style">Calculate Batteries Exchange
-                    Rate</button>
-            </td>
-        </tr>
-
     </table>
-
+    <button onclick="calculateAllRates()" class="button-style">Calculate Exchange
+        Rates</button>
     <script>
+        function calculateAllRates() {
+            getScrapCoinPerBadge();
+            getCopperCoinPerBadge();
+            getWiresCoinPerBadge();
+            getPlasticCoinPerBadge();
+            getElectronicsCoinPerBadge();
+            getBatteriesCoinPerBadge();
+        }
         function getScrapCoinPerBadge() {
             let scrapValue100 = parseFloat(document.getElementById("scrapValue").value);
             let scrapBadgeTotal = parseFloat(document.getElementById("scrapBadgeTotal").value);
@@ -193,10 +203,11 @@
         }
     </script>
     <hr />
-    <div id="donationLink">
-        <p class="footerText"><a href="https://linktr.ee/shockradiogaming" target="_blank">Link Tree</a><br />
-            Thank you for visiting our site! Check out more content and leave a tip! Have a great day!
-        </p>
+
+    <br />
+    <p>This site is brought to you by <a href="https://linktr.ee/shockradiogaming"> Shock Radio Gaming</a>. Thank you
+        for
+        visiting, have a wonderful day! </p>
 
     </div>
 </body>
