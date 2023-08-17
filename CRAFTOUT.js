@@ -1193,3 +1193,4 @@ function getBigGCost() {
     bigGInfoElement.style.display = "block";
 }
 
+
