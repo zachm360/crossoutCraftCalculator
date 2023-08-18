@@ -11,6 +11,50 @@ body {
     text-align: center;
 }
 
+.logo {
+    width: 66%;
+    max-width: 100px;
+    /* Adjust the value as needed */
+    height: auto;
+    display: block;
+    /* Prevents any alignment issues with inline elements */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+.side-by-side-container {
+    display: flex;
+    justify-content: space-between;
+    /* Create space between the two content blocks */
+    width: 66%;
+    max-width: 1000px;
+    /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    /* Center the container horizontally */
+    padding: 20px;
+    text-align: left;
+    /* Reset text alignment */
+}
+
+.left-content {
+    flex: 1;
+    /* Let the left content grow to fill available space */
+    padding-right: 20px;
+    /* Add some spacing between the content blocks */
+}
+
+.right-content {
+    flex: 1;
+    display: flex;
+    /* Use flexbox */
+    flex-direction: column;
+    /* Arrange items vertically */
+    justify-content: top;
+    /* Center items vertically */
+    align-items: center;
+    /* Center items horizontally */
+}
+
 .center-container {
     max-width: 800px;
     /* Adjust the maximum width as needed */
@@ -208,6 +252,7 @@ hr {
 table {
     margin-left: auto;
     margin-right: auto;
+    width: 66%;
 }
 
 #donationLink {
